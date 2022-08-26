@@ -1,9 +1,35 @@
 html,
 body {
+  overflow: hidden;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+.dropdown:hover > .dropdown-menu{
+  display: block;
+  margin-top: 0px;
+}
+
+.dropdown-menu{
+  border-top: 2px solid purple;
+}
+
+
+.header{
+    min-height: 350px;
+    border-bottom-right-radius: 50%;
+    background: rgba(111,66,193,.1);
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgba(111, 66, 193, 0.1);
+   
+
 }
 
 a {
