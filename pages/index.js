@@ -121,12 +121,11 @@ const Section2 = () => {
 
 const Section3 = () => {
   return (
-    <div className="container mt-4 pt-4 mb-5">
+    <div className="container mt-5 pt-5 mb-5 pb-5">
       <div className="row">
         <div className="col-12  col-lg-6 col-xl-6 col-xxl-6">
           <iframe
-            width="520"
-            height="315"
+            className="video"
             src="https://www.youtube.com/embed/a7Oe4bOMBws"
             title="YouTube video player"
             frameBorder="0"
@@ -136,16 +135,16 @@ const Section3 = () => {
         </div>
 
         <div className="col-12  col-lg-6 col-xl-6 col-xxl-6 pt-4">
-          <h1 className="text-purple">What is Coronavirus?</h1>
+          <h2 className="text-purple">What is Coronavirus?</h2>
           <p className="text-dark">
             Coronaviruses (CoV) are a large family of viruses that cause illness
             ranging from the common cold to more severe diseases. Find out more
             about this novel coronavirus (nCoV) that has not been previously
             identified in humans
           </p>
-          <h1 className="text-purple">
+          <h3 className="text-purple">
             WHO: Coronavirus disease (COVID-19) Pandemic
-          </h1>
+          </h3>
           <p className="text-dark">
             The World Health Organization (WHO) is working closely with global
             experts, governments and partners to rapidly expand scientific
@@ -153,6 +152,91 @@ const Section3 = () => {
             the virus, and to provide advice to countries and individuals on
             measures to protect health and prevent the spread of this outbreak.
           </p>
+        </div>
+      </div>
+      <br />
+      <br />
+      <div className="row">
+        <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 d-flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="46"
+            height="46"
+            fill="#7B1FA2"
+            className="bi bi-shield-fill-check"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fillRule="evenodd"
+              d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm2.146 5.146a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647z"
+            />
+          </svg>
+          <div className="ms-3">
+            <p className="h4 text-purple fw-3">Protection</p>
+            <p className="text-muted">Lorem ipsum dolor sit.</p>
+          </div>
+        </div>
+        <div
+          className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 d-flex"
+          width="26px"
+          height="6px"
+          fill="#7B1FA2"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="46"
+            height="46"
+            fill="#7B1FA2"
+            className="bi bi-shield-fill-check"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fillRule="evenodd"
+              d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm2.146 5.146a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647z"
+            />
+          </svg>
+          <div className="ms-3">
+            <p className="h4 text-purple fw-3">Protection</p>
+            <p className="text-muted">Lorem ipsum dolor sit.</p>
+          </div>
+        </div>
+        <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 d-flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="46"
+            height="46"
+            fill="#7B1FA2"
+            className="bi bi-shield-fill-check"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fillRule="evenodd"
+              d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm2.146 5.146a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647z"
+            />
+          </svg>
+          <div className="ms-3">
+            <p className="h4 text-purple fw-3">Protection</p>
+            <p className="text-muted">Lorem ipsum dolor sit.</p>
+          </div>
+        </div>
+        <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 d-flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="46"
+            height="46"
+            fill="#7B1FA2"
+            className="bi bi-shield-fill-check"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fillRule="evenodd"
+              d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm2.146 5.146a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647z"
+            />
+          </svg>
+          <div className="ms-3">
+            <p className="h4 text-purple fw-3">Protection</p>
+            <p className="text-muted">Lorem ipsum dolor sit.</p>
+          </div>
         </div>
       </div>
     </div>

@@ -1,12 +1,15 @@
+import Link from "next/link"
 
 
 export const MainNavBar=({active})=>{
       return(
         <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container  ">
-          <a className="navbar-brand fs-3 fw-3 ms-5" href="#">
+         <Link href="/">
+         <a className="navbar-brand fs-3 fw-3 ms-5" >
             Covid.
           </a>
+         </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -21,9 +24,11 @@ export const MainNavBar=({active})=>{
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto me-4 mb-2 mb-lg-0">
               <li className={"nav-item pe-3 "} >
-                <a className={"nav-link text-black "+active } aria-current="page" href="#">
+               <Link href="/">
+               <a className={"nav-link text-black "+active } aria-current="page" >
                   Home
                 </a>
+               </Link>
               </li>
              
               <li className="nav-item pe-3 dropdown">
@@ -63,17 +68,36 @@ export const MainNavBar=({active})=>{
                 </ul>
               </li>
               
-              <li className="nav-item pe-3">
+              {/* <li className="nav-item pe-3">
                 <a className="nav-link text-black" aria-current="page" href="#">
                   Symptoms
                 </a>
-              </li>
-              <li className="nav-item pe-3">
-                <a className="nav-link text-black" aria-current="page" href="#">
-                  Get Vercine
+              </li> */}
+              <li className="nav-item pe-3 dropdown">
+                <a
+                  className="nav-link text-black "
+                  
+                >
+                  Get Vacine
                 </a>
+                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                   <Link href={"/register"} >
+                   <a className="dropdown-item" href="">
+                     Register
+                    </a>
+                   </Link>
+                  </li>
+                  <li>
+                    <Link href={"login"}>
+                    <a className="dropdown-item" href="#">
+                     Login
+                    </a>
+                    </Link>
+                  </li>
+                
+                </ul>
               </li>
-
               <li className="nav-item pe-3">
                 <a className="nav-link text-black" aria-current="page" href="#">
                   About Us
