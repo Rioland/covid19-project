@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link"
 
 
@@ -68,12 +69,14 @@ export const MainNavBar=({active})=>{
                 </ul>
               </li>
               
-              {/* <li className="nav-item pe-3">
-                <a className="nav-link text-black" aria-current="page" href="#">
-                  Symptoms
+              <li className="nav-item pe-3">
+                <Link href={"/registration"}>
+                <a className="nav-link text-black" aria-current="page">
+                  Registration
                 </a>
-              </li> */}
-              <li className="nav-item pe-3 dropdown">
+                </Link>
+              </li>
+              {/* <li className="nav-item pe-3 dropdown">
                 <a
                   className="nav-link text-black "
                   
@@ -97,7 +100,7 @@ export const MainNavBar=({active})=>{
                   </li>
                 
                 </ul>
-              </li>
+              </li> */}
               <li className="nav-item pe-3">
                 <a className="nav-link text-black" aria-current="page" href="#">
                   About Us
@@ -211,4 +214,122 @@ export const Footer=()=>{
 </div>
 
 </div>)
+}
+
+export const BenefitNav=()=>{
+  return(
+<>
+  <div className="container pt-2 pb-2 ">
+    <img
+      className="usalogopic img-thumbnail"
+      src="./images/usa logo.png"
+      alt=""
+      srcSet=""
+    />
+    <span className="ps-2">
+      An official website of the Federal government of Naigeria.<span></span>
+    </span>
+  </div>
+  <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <div className="container-fluid">
+    <Link href={"/"}>
+    <a className="navbar-brand" >
+        <img
+          className="img-fluid"
+          src="./images/logo_nphcda_main copy.svg"
+          alt=""
+          width="100px"
+          height="35px"
+          srcSet=""
+        />
+      </a>
+    </Link>
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span className="navbar-toggler-icon" />
+      </button>
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <h3 className="text-center">NCDC DEPARTMENT OF Nigeria</h3>
+        </ul>
+        <form className="d-flex">
+          <input
+            className="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          {/* <button class="btn btn-outline-success" type="submit">Search</button> */}
+        </form>
+      </div>
+    </div>
+  </nav>
+</>
+
+  );
+}
+
+export const BenefitFooter=()=>{
+  return(
+    <>
+  <div className="pt-5 pb-4 bg-dark text-light">
+    <div className="container">
+      <div className="row">
+        <div className="col-12 col-sm-12  col-lg-3 col-xl-3 col-xxl-3 px-3">
+          <img
+            className="footerimg"
+            src="./images/logo_nphcda_main copy.svg"
+            alt=""
+            srcSet=""
+          />
+          <h3 className="h5">NCDC DEPARTMENT OF Nigeria</h3>
+          <p className="text-primary">200 Constitution Ave NW</p>
+          <p className="text-primary">Washington, DC 20210</p>
+          <a href="http://">
+            <p className="text-primary"> +1-208-550-3158</p>
+          </a>
+          <a href="http://" target="_blank" rel="noopener noreferrer">
+            <p className="text-primary">eupsgov@gmail.com</p>
+          </a>
+        </div>
+        <div className="col-12 col-sm-12  col-lg-3 col-xl-3 col-xxl-3  px-3">
+          <p className="h5">FEDERAL GOVERNMENT</p>
+          <p className="text-primary">White House</p>
+          <p className="text-primary">Coronavirus Resources</p>
+          <p className="text-primary">Disaster Recovery Assistance</p>
+          <p className="text-primary">Notification of EEO Violations</p>
+          <p className="text-primary">No Fear Act Data</p>
+          <p className="text-primary">U.S. Office of Special Counsel</p>
+        </div>
+        <div className="col-12 col-sm-12  col-lg-3 col-xl-3 col-xxl-3">
+          <h3 className="h5">LABOR DEPARTMENT</h3>
+          <p className="text-primary">Guidance Search</p>
+          <p className="text-primary">Office of Inspector General</p>
+          <p className="text-primary">Español</p>
+          <p className="text-primary">Emergency Accountability Status Link</p>
+        </div>
+        <div className="col-12 col-sm-12  col-lg-3 col-xl-3 col-xxl-3">
+          <h3 className="h5">ABOUT THE SITE</h3>
+          <p className="text-primary">Freedom of Information Act</p>
+          <p className="text-primary">Accessibility Statement</p>
+          <p className="text-primary">Disclaimers</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div className="bg-secondary" style={{ height: 50 }}>
+    <p className="text-info text-center pt-2">
+      <strong>copyright@eupsgov</strong>
+    </p>
+  </div>
+</>
+
+  )
 }

@@ -2,7 +2,7 @@
 
 import { Footer, MainNavBar } from "../components/navbars";
 import { Fragment } from "react";
-export default function Home() {
+export default function Old() {
   return (
     <Fragment>
       <div className="header">
