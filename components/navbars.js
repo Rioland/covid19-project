@@ -34,8 +34,7 @@ export const MainNavBar=({active})=>{
              
               <li className="nav-item pe-3 dropdown">
                 <a
-                  className="nav-link text-black "
-                  
+                  className="nav-link text-black " 
                 >
                   Preventions
                 </a>
@@ -103,7 +102,7 @@ export const MainNavBar=({active})=>{
               </li> */}
               <li className="nav-item pe-3">
                 <a className="nav-link text-black" aria-current="page" href="#">
-                  About Us
+                 Details
                 </a>
               </li>
 

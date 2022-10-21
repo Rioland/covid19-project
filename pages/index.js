@@ -1,222 +1,248 @@
 /* eslint-disable @next/next/no-img-element */
 
-import {  BenefitFooter, BenefitNav } from "../components/navbars";
+import { Footer, MainNavBar } from "../components/navbars";
 import { Fragment } from "react";
-import Head from "next/head";
-import Link from "next/link";
-export default function Home() {
+import { useRouter } from "next/router";
+export default function Old() {
+  const route=useRouter()
   return (
     <Fragment>
-      <Head>
-        <title>Employment</title>
-        <link
-          rel="shortcut icon"
-          href="./images/logo eeeee.png"
-          type="image/x-icon"
-        />
-      </Head>
-      <BenefitNav />
-      <Stage />
-      <Stage2 />
+      <div className="header">
+        <MainNavBar active={"active1"} />
+        <div className="container mt-5 pt-5">
+          <div className="row">
+            <div className="col-12 col-sm-12 col-lg-6 col-md-6 col-xl-6 col-xxl-6 pb-4">
+              <p className=" text-purple">COVID-19 AWARENESS</p>
+              <p className="h1 text-purple mb-4">Stay Safe. Stay Home.</p>
+              <p className="text-muted">
+                The World Health Organization (WHO) is working closely with
+                global experts, governments and partners to rapidly expand
+                scientific knowledge on this new virus,
+                {/* to track the spread and
+                virulence of the virus, and to provide advice to countries and
+                individuals on measures to protect health and prevent the spread
+                of this outbreak */}
+              </p>
+              <div className="mt-5 mb-3 ">
+                <button onClick={()=>{
+                  route.push("registration")
+                }}
+                  className="btn btn-outline-success ps-4 pe-4"
+                  style={{ borderRadius: "20px" }}>
+                  Get Vacine
+                </button>
+              </div>
+            </div>
 
-      <BenefitFooter />
+            <div className="col-12 col-sm-12 col-lg-6 col-md-6 col-xl-6 col-xxl-6">
+              <img
+                src={"/images/xillustration.png.pagespeed.ic.UP1KIL7_k-.png"}
+                alt="illus"
+                width={"400px"}
+                height="400px"
+                className="ms-5 image-fluid"
+                
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <Section2 />
+      <Section3 />
+
+      <Footer />
     </Fragment>
   );
 }
 
-const Stage = () => {
+const Section2 = () => {
   return (
-    <>
-      <div className="container bluenav ">
-      <Link href={"/registration"}>
-      <a >
-          <div
-            className="ms-auto  me-5 container"
-            style={{width: "fit-content", height:"fit-content"}}
-          >
-            <img
-              className="Applynow "
-              src="images/us-embassy-embassy.gif"
-              alt=""
-            />
-          </div>
-        </a>
-      </Link>
-      </div>
-      <h1 className=" container EUPA pt-2 mt-4">
-        Corona Vacine Registration 
-      </h1>
-      <div className="txt">
-        <p className="txttxt">
-          <b>
-            The CARES Act gives states the option of extending unemployment
-            compensation to independent contractors and other workers who are
-            ordinarily ineligible for unemployment benefits. Please contact your
-            states unemployment insurance office at the website or phone number
-            provided below to learn more about the availability of these
-            benefits where you live.
-          </b>
-        </p>
-      </div>
-      <div className="container mb-5 mt-5">
-        <div
-          id="carouselExampleDark"
-          className="carousel carousel-dark slide"
-          data-bs-ride="carousel"
-        >
-          <div className="carousel-indicators">
-            <button
-              type="button"
-              data-bs-target="#carouselExampleDark"
-              data-bs-slide-to={0}
-              className="active"
-              aria-current="true"
-              aria-label="Slide 1"
-            />
-            <button
-              type="button"
-              data-bs-target="#carouselExampleDark"
-              data-bs-slide-to={1}
-              aria-label="Slide 2"
-            />
-            <button
-              type="button"
-              data-bs-target="#carouselExampleDark"
-              data-bs-slide-to={2}
-              aria-label="Slide 3"
-            />
-          </div>
-          <div className="carousel-inner">
-            <div className="carousel-item active" data-bs-interval={10000}>
-              <img
-                src="./images/images etghj.jpg"
-                height={300}
-                className="d-block w-100"
-                alt="..."
-              />
-              <div className="carousel-caption d-none d-md-block">
-                {/* <h5>First slide label</h5>
-    <p>Some representative placeholder content for the first slide.</p> */}
-              </div>
+    <div className="container pt-5 mb-5 ">
+      <p className="text-center h2 text-purple">Coronavirus Statistics</p>
+      <p className="text-center w-50 ms-auto me-auto">
+        {" "}
+        Coronaviruses (CoV) are a large family of viruses that cause illness
+        ranging from the common cold to more severe diseases
+      </p>
+      {/*  */}
+      <div className="container mt-4">
+        <div className="row">
+          <div className="col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 c">
+            <div className="text-center align-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                className="text-purple"
+                fill="blueviolet"
+                width={40}
+                height={40}
+              >
+                <path d="M192 24C192 10.75 202.7 0 216 0H296C309.3 0 320 10.75 320 24C320 37.25 309.3 48 296 48H280V81.62C310.7 85.8 338.8 97.88 362.3 115.7L386.1 91.95L374.8 80.64C365.4 71.26 365.4 56.07 374.8 46.7C384.2 37.32 399.4 37.32 408.7 46.7L465.3 103.3C474.7 112.6 474.7 127.8 465.3 137.2C455.9 146.6 440.7 146.6 431.4 137.2L420 125.9L396.3 149.7C414.1 173.2 426.2 201.3 430.4 232H464V216C464 202.7 474.7 192 488 192C501.3 192 512 202.7 512 216V296C512 309.3 501.3 320 488 320C474.7 320 464 309.3 464 296V280H430.4C426.2 310.7 414.1 338.8 396.3 362.3L420 386.1L431.4 374.8C440.7 365.4 455.9 365.4 465.3 374.8C474.7 384.2 474.7 399.4 465.3 408.7L408.7 465.3C399.4 474.7 384.2 474.7 374.8 465.3C365.4 455.9 365.4 440.7 374.8 431.4L386.1 420L362.3 396.3C338.8 414.1 310.7 426.2 280 430.4V464H296C309.3 464 320 474.7 320 488C320 501.3 309.3 512 296 512H216C202.7 512 192 501.3 192 488C192 474.7 202.7 464 216 464H232V430.4C201.3 426.2 173.2 414.1 149.7 396.3L125.9 420.1L137.2 431.4C146.6 440.7 146.6 455.9 137.2 465.3C127.8 474.7 112.6 474.7 103.3 465.3L46.7 408.7C37.32 399.4 37.32 384.2 46.7 374.8C56.07 365.4 71.27 365.4 80.64 374.8L91.95 386.1L115.7 362.3C97.88 338.8 85.8 310.7 81.62 280H48V296C48 309.3 37.25 320 24 320C10.75 320 0 309.3 0 296V216C0 202.7 10.75 192 24 192C37.25 192 48 202.7 48 216V232H81.62C85.8 201.3 97.88 173.2 115.7 149.7L91.95 125.9L80.64 137.2C71.26 146.6 56.07 146.6 46.7 137.2C37.32 127.8 37.32 112.6 46.7 103.3L103.3 46.7C112.6 37.33 127.8 37.33 137.2 46.7C146.6 56.07 146.6 71.27 137.2 80.64L125.9 91.95L149.7 115.7C173.2 97.88 201.3 85.8 232 81.62V48H216C202.7 48 192 37.26 192 24V24zM192 176C165.5 176 144 197.5 144 224C144 250.5 165.5 272 192 272C218.5 272 240 250.5 240 224C240 197.5 218.5 176 192 176zM304 328C317.3 328 328 317.3 328 304C328 290.7 317.3 280 304 280C290.7 280 280 290.7 280 304C280 317.3 290.7 328 304 328z" />
+              </svg>
             </div>
-            <div className="carousel-item" data-bs-interval={2000}>
-              <img
-                src="./images/block2.jpg"
-                height="300px"
-                className="d-block w-100"
-                alt="..."
-              />
-              <div className="carousel-caption d-none d-md-block">
-                {/* <h5>Second slide label</h5>
-    <p>Some representative placeholder content for the second slide.</p> */}
-              </div>
-            </div>
-            <div className="carousel-item">
-              <img
-                src="./images/images eeee.jpg"
-                height="300px"
-                className="d-block w-100"
-                alt="..."
-              />
-              <div className="carousel-caption d-none d-md-block">
-                {/* <h5>Third slide label</h5>
-    <p>Some representative placeholder content for the third slide.</p> */}
-              </div>
-            </div>
+            <p className="h1 text-black text-center mt-2">14,112,077</p>
+            <p className="text-muted text-center">ACTIVE CASES</p>
           </div>
-          <button
-            className="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleDark"
-            data-bs-slide="prev"
-          >
-            <span className="carousel-control-prev-icon" aria-hidden="true" />
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button
-            className="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleDark"
-            data-bs-slide="next"
-          >
-            <span className="carousel-control-next-icon" aria-hidden="true" />
-            <span className="visually-hidden">Next</span>
-          </button>
+
+          <div className="col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+            <div className="text-center align-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                className="text-purple"
+                fill="blueviolet"
+                width={40}
+                height={40}
+              >
+                <path d="M192 24C192 10.75 202.7 0 216 0H296C309.3 0 320 10.75 320 24C320 37.25 309.3 48 296 48H280V81.62C310.7 85.8 338.8 97.88 362.3 115.7L386.1 91.95L374.8 80.64C365.4 71.26 365.4 56.07 374.8 46.7C384.2 37.32 399.4 37.32 408.7 46.7L465.3 103.3C474.7 112.6 474.7 127.8 465.3 137.2C455.9 146.6 440.7 146.6 431.4 137.2L420 125.9L396.3 149.7C414.1 173.2 426.2 201.3 430.4 232H464V216C464 202.7 474.7 192 488 192C501.3 192 512 202.7 512 216V296C512 309.3 501.3 320 488 320C474.7 320 464 309.3 464 296V280H430.4C426.2 310.7 414.1 338.8 396.3 362.3L420 386.1L431.4 374.8C440.7 365.4 455.9 365.4 465.3 374.8C474.7 384.2 474.7 399.4 465.3 408.7L408.7 465.3C399.4 474.7 384.2 474.7 374.8 465.3C365.4 455.9 365.4 440.7 374.8 431.4L386.1 420L362.3 396.3C338.8 414.1 310.7 426.2 280 430.4V464H296C309.3 464 320 474.7 320 488C320 501.3 309.3 512 296 512H216C202.7 512 192 501.3 192 488C192 474.7 202.7 464 216 464H232V430.4C201.3 426.2 173.2 414.1 149.7 396.3L125.9 420.1L137.2 431.4C146.6 440.7 146.6 455.9 137.2 465.3C127.8 474.7 112.6 474.7 103.3 465.3L46.7 408.7C37.32 399.4 37.32 384.2 46.7 374.8C56.07 365.4 71.27 365.4 80.64 374.8L91.95 386.1L115.7 362.3C97.88 338.8 85.8 310.7 81.62 280H48V296C48 309.3 37.25 320 24 320C10.75 320 0 309.3 0 296V216C0 202.7 10.75 192 24 192C37.25 192 48 202.7 48 216V232H81.62C85.8 201.3 97.88 173.2 115.7 149.7L91.95 125.9L80.64 137.2C71.26 146.6 56.07 146.6 46.7 137.2C37.32 127.8 37.32 112.6 46.7 103.3L103.3 46.7C112.6 37.33 127.8 37.33 137.2 46.7C146.6 56.07 146.6 71.27 137.2 80.64L125.9 91.95L149.7 115.7C173.2 97.88 201.3 85.8 232 81.62V48H216C202.7 48 192 37.26 192 24V24zM192 176C165.5 176 144 197.5 144 224C144 250.5 165.5 272 192 272C218.5 272 240 250.5 240 224C240 197.5 218.5 176 192 176zM304 328C317.3 328 328 317.3 328 304C328 290.7 317.3 280 304 280C290.7 280 280 290.7 280 304C280 317.3 290.7 328 304 328z" />
+              </svg>
+            </div>
+            <p className="h1 text-black text-center mt-2">595,685</p>
+            <p className="text-muted text-center">DEATHS CASES</p>
+          </div>
+
+          <div className="col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+            <div className="text-center align-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                className="text-purple"
+                fill="blueviolet"
+                width={40}
+                height={40}
+              >
+                <path d="M192 24C192 10.75 202.7 0 216 0H296C309.3 0 320 10.75 320 24C320 37.25 309.3 48 296 48H280V81.62C310.7 85.8 338.8 97.88 362.3 115.7L386.1 91.95L374.8 80.64C365.4 71.26 365.4 56.07 374.8 46.7C384.2 37.32 399.4 37.32 408.7 46.7L465.3 103.3C474.7 112.6 474.7 127.8 465.3 137.2C455.9 146.6 440.7 146.6 431.4 137.2L420 125.9L396.3 149.7C414.1 173.2 426.2 201.3 430.4 232H464V216C464 202.7 474.7 192 488 192C501.3 192 512 202.7 512 216V296C512 309.3 501.3 320 488 320C474.7 320 464 309.3 464 296V280H430.4C426.2 310.7 414.1 338.8 396.3 362.3L420 386.1L431.4 374.8C440.7 365.4 455.9 365.4 465.3 374.8C474.7 384.2 474.7 399.4 465.3 408.7L408.7 465.3C399.4 474.7 384.2 474.7 374.8 465.3C365.4 455.9 365.4 440.7 374.8 431.4L386.1 420L362.3 396.3C338.8 414.1 310.7 426.2 280 430.4V464H296C309.3 464 320 474.7 320 488C320 501.3 309.3 512 296 512H216C202.7 512 192 501.3 192 488C192 474.7 202.7 464 216 464H232V430.4C201.3 426.2 173.2 414.1 149.7 396.3L125.9 420.1L137.2 431.4C146.6 440.7 146.6 455.9 137.2 465.3C127.8 474.7 112.6 474.7 103.3 465.3L46.7 408.7C37.32 399.4 37.32 384.2 46.7 374.8C56.07 365.4 71.27 365.4 80.64 374.8L91.95 386.1L115.7 362.3C97.88 338.8 85.8 310.7 81.62 280H48V296C48 309.3 37.25 320 24 320C10.75 320 0 309.3 0 296V216C0 202.7 10.75 192 24 192C37.25 192 48 202.7 48 216V232H81.62C85.8 201.3 97.88 173.2 115.7 149.7L91.95 125.9L80.64 137.2C71.26 146.6 56.07 146.6 46.7 137.2C37.32 127.8 37.32 112.6 46.7 103.3L103.3 46.7C112.6 37.33 127.8 37.33 137.2 46.7C146.6 56.07 146.6 71.27 137.2 80.64L125.9 91.95L149.7 115.7C173.2 97.88 201.3 85.8 232 81.62V48H216C202.7 48 192 37.26 192 24V24zM192 176C165.5 176 144 197.5 144 224C144 250.5 165.5 272 192 272C218.5 272 240 250.5 240 224C240 197.5 218.5 176 192 176zM304 328C317.3 328 328 317.3 328 304C328 290.7 317.3 280 304 280C290.7 280 280 290.7 280 304C280 317.3 290.7 328 304 328z" />
+              </svg>
+            </div>
+            <p className="h1 text-black text-center mt-2">8,397,665</p>
+            <p className="text-muted text-center">RECOVERED CASES</p>
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
-const Stage2 = () => {
+const Section3 = () => {
   return (
-    <>
-      <p className="ptxt">
-        Due to the recent increase of the CORONA-VIRUS. The Government has
-        decide to Grant USA Citizen with sum of $1950 weekly due to the high
-        rate of UNEMPLOYMENT.
-        <br />
-        This progam was previously announced eligible for individuals in USA.
-        This is a scheme set-up by FG to ease and help both employed and
-        unemployed citizen with sum of $1950 every week.
-      </p>
-      <p className="ptxt">
-        {" "}
-        ECONOMIC UNEMPLOYMENT PANDEMIC STIMULUS (E.U.P.S) announces that support
-        will be given to business owners, and self-employed individuals who lost
-        their jobs or business, or had their work hours reduced due to increase
-        rate in COVID in past few months.
-        <br />
-        However, you dont have to leave the comfort of your house or visit any
-        of branch to get this stimulus funds. Moreover, this platform is created
-        to help you through the registration and validation process.
-      </p>
-      <h1 className="boldtxt">Background</h1>
-      <p className="ptxt">
-        On March 18, 2020, President Trump signed into law the Families First
-        Coronavirus Response Act (FFCRA), which provided additional flexibility
-        for state unemployment insurance agencies and additional administrative
-        funding to respond to the COVID-19 pandemic. The Coronavirus Aid,
-        Relief, and Economic Security (CARES) Act was signed into law on March
-        27. It expands states ability to provide unemployment insurance for many
-        workers impacted by the COVID-19 pandemic, including for workers who are
-        not ordinarily eligible for unemployment benefits. For more information,
-        please refer to the resources available below.
-      </p>
-      <h1 className="boldtxt">
-        If I am eligible for Pandemic Unemployment Assistance, do I need to
-        first apply for unemployment insurance?
-      </h1>
-      <p className="ptxt">
-        States must have a process for determining that Pandemic Unemployment
-        Assistance (PUA) applicants are ineligible for regular unemployment
-        benefits, which may not include filing a regular claim as a first step.
-        States are not required to take and adjudicate a full claim for regular
-        unemployment insurance benefits to meet this requirement. While states
-        are not prohibited from taking a full claim, to facilitate expedited
-        claims processing the U.S. Department of Labor has discouraged states
-        from doing so. Individuals should apply using the states PUA application
-        process and, in states that have not yet established that process, must
-        wait until it is established.
-      </p>
-      <h1 className="boldtxt">Where Do I File for Unemployment Insurance?</h1>
-      <p className="ptxt">
-        Unemployment insurance is a joint state-federal program that provides
-        cash benefits to eligible workers. Each state administers a separate
-        unemployment insurance program, but all states follow the same
-        guidelines established by federal law.
-      </p>
+    <div className="container mt-5 pt-5 mb-5 pb-5">
+      <div className="row">
+        <div className="col-12  col-lg-6 col-xl-6 col-xxl-6">
+          <iframe
+            className="video"
+            src="https://www.youtube.com/embed/a7Oe4bOMBws"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+
+        <div className="col-12  col-lg-6 col-xl-6 col-xxl-6 pt-4">
+          <h2 className="text-purple">What is Coronavirus?</h2>
+          <p className="text-dark">
+            Coronaviruses (CoV) are a large family of viruses that cause illness
+            ranging from the common cold to more severe diseases. Find out more
+            about this novel coronavirus (nCoV) that has not been previously
+            identified in humans
+          </p>
+          <h3 className="text-purple">
+            WHO: Coronavirus disease (COVID-19) Pandemic
+          </h3>
+          <p className="text-dark">
+            The World Health Organization (WHO) is working closely with global
+            experts, governments and partners to rapidly expand scientific
+            knowledge on this new virus, to track the spread and virulence of
+            the virus, and to provide advice to countries and individuals on
+            measures to protect health and prevent the spread of this outbreak.
+          </p>
+        </div>
+      </div>
       <br />
       <br />
-      <p className="ptxt">
-        Fill in the following information below to start earning your weekly
-        Benefits either by Paychecks or Direct Deposit into your Acount as soon
-        as we get you registered and validated on the (E.U.P.S) platform.
-        <Link href={"/registration"}>
-        
-        <a>Click here to Apply.</a>
-        </Link>
-      </p>
-    </>
+      <div className="row">
+        <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 d-flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="46"
+            height="46"
+            fill="#7B1FA2"
+            className="bi bi-shield-fill-check"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fillRule="evenodd"
+              d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm2.146 5.146a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647z"
+            />
+          </svg>
+          <div className="ms-3">
+            <p className="h4 text-purple fw-3">Protection</p>
+            <p className="text-muted">Lorem ipsum dolor sit.</p>
+          </div>
+        </div>
+        <div
+          className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 d-flex"
+          width="26px"
+          height="6px"
+          fill="#7B1FA2"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="46"
+            height="46"
+            fill="#7B1FA2"
+            className="bi bi-shield-fill-check"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fillRule="evenodd"
+              d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm2.146 5.146a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647z"
+            />
+          </svg>
+          <div className="ms-3">
+            <p className="h4 text-purple fw-3">Protection</p>
+            <p className="text-muted">Lorem ipsum dolor sit.</p>
+          </div>
+        </div>
+        <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 d-flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="46"
+            height="46"
+            fill="#7B1FA2"
+            className="bi bi-shield-fill-check"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fillRule="evenodd"
+              d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm2.146 5.146a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647z"
+            />
+          </svg>
+          <div className="ms-3">
+            <p className="h4 text-purple fw-3">Protection</p>
+            <p className="text-muted">Lorem ipsum dolor sit.</p>
+          </div>
+        </div>
+        <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 d-flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="46"
+            height="46"
+            fill="#7B1FA2"
+            className="bi bi-shield-fill-check"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fillRule="evenodd"
+              d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm2.146 5.146a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647z"
+            />
+          </svg>
+          <div className="ms-3">
+            <p className="h4 text-purple fw-3">Protection</p>
+            <p className="text-muted">Lorem ipsum dolor sit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };

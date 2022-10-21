@@ -15,7 +15,7 @@ body {
   overflow-x: hidden;
   padding: 0;
   background-color: white;
-  color: black;
+  color: green;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -29,10 +29,10 @@ body {
   border-top: 2px solid 151557 ;
 }
 .text-purple{
-  color:#151557 ;
+  color:green ;
 }
 .btn-purple{
-  background-color: 151557 ;
+  background-color: green ;
 }
 .logo{
   width: 28rem;
@@ -48,7 +48,7 @@ body {
 .header{
     min-height: 450px;
     border-bottom-right-radius: 50%;
-    /* background: rgba(111,66,193,.1); */
+    background: rgba(180, 253, 191, 0.1);
     background-image: initial;
     background-position-x: initial;
     background-position-y: initial;

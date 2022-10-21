@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { Footer, BenefitFooter, BenefitNav } from "../components/navbars";
 import { Fragment, useState } from "react";
+
 import Head from "next/head";
 import Link from "next/link";
 import NaijaStates from "naija-state-local-government";
@@ -154,7 +155,7 @@ const Form = ({ nigeriaState }) => {
                 Swal.fire({
                   icon: "success",
                   title: "Success",
-                  text: "Weldone! Registration Successfull",
+                  text: "Registration Successfull Vercination details has been sent you your mail",
                   confirmButtonText: "Okay",
                 });
                 setLoading(false);
@@ -177,6 +178,12 @@ const Form = ({ nigeriaState }) => {
         } catch (error) {
           console.error(error);
           setLoading(false);
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: error,
+            confirmButtonText: "Okay",
+          });
         }
 
        }
