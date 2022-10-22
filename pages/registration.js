@@ -6,20 +6,12 @@ import Head from "next/head";
 import Link from "next/link";
 import NaijaStates from "naija-state-local-government";
 import Swal from "sweetalert2";
-import { getNetDate,generateAlphaNumericCode,generateAlphaCode } from "../firbase/constant";
-import {
-  getFirestore,
-  setDoc,
-  doc,
-  collection,
-  query,
-  where,
-  getDocs,
-} from "firebase/firestore";
-import { app } from "../firbase/firebaseAuth";
-import { async } from "@firebase/util";
+import { getNetDate, generateAlphaNumericCode, generateAlphaCode } from "../firbase/constant";
+import app from "../firbase/firebaseAuth";
+import { doc, getFirestore, setDoc } from "firebase/firestore";
+// import { async } from "@firebase/util";
 
-const firestore = getFirestore(app);
+const db = getFirestore(app);
 
 const Registration = ({ nigeriaState }) => {
   return (
@@ -57,7 +49,7 @@ const Registration = ({ nigeriaState }) => {
 };
 
 const Form = ({ nigeriaState }) => {
-  const cus = async () => {};
+  const cus = async () => { };
   cus();
 
   const [lgas, setLgas] = useState([]);
@@ -83,11 +75,16 @@ const Form = ({ nigeriaState }) => {
     const { name, value } = e.target;
 
     setIspreg({
-      [name]: value.rad,
+      [name]: `${value.rad}`,
     });
   };
 
   const registerHandler = async (e) => {
+
+
+
+
+
     if (
       nin &&
       medicalCondi &&
@@ -109,86 +106,136 @@ const Form = ({ nigeriaState }) => {
       if (cphoneNumber == phoneNumber) {
         setLoading(true);
 
-        const docRef = doc(firestore, "users/" + email);
-        var couter=1;
-       while (true) {
         try {
-          const custom = query(
-            collection(firestore, "users"),
-            where("first_date", "==", "" + getNetDate((24)*couter))
-          );
-          const snap = await getDocs(custom);
-          if (snap.docs.length > 20) {
-            couter++;
-          } else {
-            const data = {
-              first_name: fname,
-              last_name: lname,
-              meddle_name: middleName,
-              phoneNumber: phoneNumber,
-              alternativ_contact: aphoneNumber,
-              email: email,
-              facilityType: facilityType,
-              nin: nin,
-              ninType: ninType,
-              medical_Condition: medicalCondi,
-              gender: gender,
-              ispregnant: ispreg.rad,
-              dob: dob,
-              home_address: hAdress,
-              currentstate: currentstate,
-              CurrentLga: CurrentLga,
-              // uid: uid,
-              first_dose: false,
-              second_dose: false,
-              third_does: false,
-              vacine_type: null,
-              first_date: getNetDate((24)*couter),
-              third_date:null,
-              second_date:null,
-              Vacine_Id:"NG-NF"+generateAlphaNumericCode(10),
-              facilityId:generateAlphaNumericCode(11)
-            };
-            setDoc(docRef, data, { merge: true })
-              .then((res) => {
-               
-                Swal.fire({
-                  icon: "success",
-                  title: "Success",
-                  text: "Registration Successfull Vercination details has been sent you your mail",
-                  confirmButtonText: "Okay",
-                });
-                setLoading(false);
-              })
-              .catch((e) => {
-               
-                Swal.fire({
-                  icon: "error",
-                  title: "Oops...",
-                  text: "something went wrong",
-                  confirmButtonText: "Okay",
-                });
-                setLoading(false);
-                console.log(e);
-              });
-              setLoading(false);
-              break;
-              
-          }
-        } catch (error) {
-          console.error(error);
+          const docRef = doc(db, "users/" + email);
+          const data = {
+            first_name: fname,
+            last_name: lname,
+            meddle_name: middleName,
+            phoneNumber: phoneNumber,
+            alternativ_contact: aphoneNumber,
+            email: email,
+            facilityType: facilityType,
+            nin: nin,
+            ninType: ninType,
+            medical_Condition: medicalCondi,
+            gender: gender,
+            ispregnant: ispreg.rad,
+            dob: dob,
+            home_address: hAdress,
+            currentstate: currentstate,
+            CurrentLga: CurrentLga,
+            // uid: uid,
+            first_dose: false,
+            second_dose: false,
+            third_does: false,
+            vacine_type: null,
+            first_date: getNetDate((48)),
+            third_date: null,
+            second_date: null,
+            Vacine_Id: "NG-NF" + generateAlphaNumericCode(10),
+            facilityId: generateAlphaNumericCode(11)
+          };
+          await setDoc(docRef, data)
+          Swal.fire({
+            icon: "success",
+            title: "Success",
+            text: "Registration Successfull Vercination details has been sent you your mail",
+            confirmButtonText: "Okay",
+          });
           setLoading(false);
+
+        } catch (error) {
+          console.log(`Error: ${error}`);
           Swal.fire({
             icon: "error",
             title: "Oops...",
             text: error,
             confirmButtonText: "Okay",
           });
+          setLoading(false);
         }
 
-       }
 
-       
+        // var couter=1;
+        //  while (true) {
+        //   try {
+        //     // const custom = query(
+        //     //   collection(firestore, "users"),
+        //     //   where("first_date", "==", "" + getNetDate((24)*couter))
+        //     // );
+        //     // const snap = await getDocs(custom);
+        //     if (snap.docs.length > 20) {
+        //       couter++;
+        //     } else {
+        //       const data = {
+        //         first_name: fname,
+        //         last_name: lname,
+        //         meddle_name: middleName,
+        //         phoneNumber: phoneNumber,
+        //         alternativ_contact: aphoneNumber,
+        //         email: email,
+        //         facilityType: facilityType,
+        //         nin: nin,
+        //         ninType: ninType,
+        //         medical_Condition: medicalCondi,
+        //         gender: gender,
+        //         ispregnant: ispreg.rad,
+        //         dob: dob,
+        //         home_address: hAdress,
+        //         currentstate: currentstate,
+        //         CurrentLga: CurrentLga,
+        //         // uid: uid,
+        //         first_dose: false,
+        //         second_dose: false,
+        //         third_does: false,
+        //         vacine_type: null,
+        //         first_date: getNetDate((24)*couter),
+        //         third_date:null,
+        //         second_date:null,
+        //         Vacine_Id:"NG-NF"+generateAlphaNumericCode(10),
+        //         facilityId:generateAlphaNumericCode(11)
+        //       };
+        //       setDoc(docRef, data, { merge: true })
+        //         .then((res) => {
+
+        //           Swal.fire({
+        //             icon: "success",
+        //             title: "Success",
+        //             text: "Registration Successfull Vercination details has been sent you your mail",
+        //             confirmButtonText: "Okay",
+        //           });
+        //           setLoading(false);
+        //         })
+        //         .catch((e) => {
+
+        //           Swal.fire({
+        //             icon: "error",
+        //             title: "Oops...",
+        //             text: "something went wrong",
+        //             confirmButtonText: "Okay",
+        //           });
+        //           setLoading(false);
+        //           console.log(e);
+        //         });
+        //         setLoading(false);
+        //         break;
+
+        //     }
+        //   } catch (error) {
+        //     console.error(error);
+        //     setLoading(false);
+        //     Swal.fire({
+        //       icon: "error",
+        //       title: "Oops...",
+        //       text: error,
+        //       confirmButtonText: "Okay",
+        //     });
+        //   }
+
+        //  }
+
+
       } else {
         Swal.fire({
           icon: "error",
@@ -206,6 +253,7 @@ const Form = ({ nigeriaState }) => {
       });
     }
   };
+
 
   return (
     <form id="fff" className="fff" method="POST" encType="multipart/form-data">

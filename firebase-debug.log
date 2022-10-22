@@ -1,0 +1,17 @@
+[debug] [2022-10-21T19:35:59.991Z] ----------------------------------------------------------------------
+[debug] [2022-10-21T19:35:59.995Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only functions
+[debug] [2022-10-21T19:35:59.996Z] CLI Version:   11.14.3
+[debug] [2022-10-21T19:35:59.997Z] Platform:      darwin
+[debug] [2022-10-21T19:35:59.997Z] Node Version:  v16.17.1
+[debug] [2022-10-21T19:35:59.999Z] Time:          Fri Oct 21 2022 20:35:59 GMT+0100 (West Africa Standard Time)
+[debug] [2022-10-21T19:35:59.999Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-10-21T19:36:00.005Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2022-10-21T19:36:00.116Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-10-21T19:36:00.117Z] > authorizing via signed-in user (riolandadedamola@gmail.com)
+[debug] [2022-10-21T19:36:00.117Z] [iam] checking project covid-dece5 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2022-10-21T19:36:00.118Z] > refreshing access token with scopes: []
+[debug] [2022-10-21T19:36:00.119Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-10-21T19:36:00.119Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-10-21T19:36:10.403Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2022-10-21T19:36:10.404Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
