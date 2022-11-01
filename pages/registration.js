@@ -107,7 +107,7 @@ const Form = ({ nigeriaState }) => {
         setLoading(true);
 
         try {
-          const docRef = doc(db, "users/" + email);
+          const docRef = doc(db, "users/" + Vacine_Id);
           const data = {
             first_name: fname,
             last_name: lname,
