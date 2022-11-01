@@ -1,0 +1,50 @@
+
+.reg .container {
+  height: 100vh;
+}
+.reg .card {
+  width: 100%;
+  padding: 30px;
+}
+.reg .form {
+  padding: 20px;
+}
+.reg .form-control {
+  height: 50px;
+  background-color: #eee;
+}
+.reg .form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #f50057;
+  outline: 0;
+  box-shadow: none;
+  background-color: #eee;
+}
+.reg .inputbox {
+  margin-bottom: 15px;
+}
+.reg .register {
+  width: 200px;
+  height: 51px;
+  background-color: #f50057;
+  border-color: #f50057;
+}
+.reg .register:hover {
+  width: 200px;
+  height: 51px;
+  background-color: #f50057;
+  border-color: #f50057;
+}
+.reg .login {
+  color: #f50057;
+  text-decoration: none;
+}
+.login:hover {
+  color: #f50057;
+  text-decoration: none;
+}
+.reg .form-check-input:checked {
+  background-color: #f50057;
+  border-color: #f50057;
+}
