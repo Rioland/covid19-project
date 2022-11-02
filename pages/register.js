@@ -2,17 +2,17 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { Fragment, useState } from "react";
-import Loading from "../../components/loading"
+import Loading from "../components/loading"
 import {
   getAuth,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
 } from "firebase/auth";
-import app from "../../firbase/firebaseAuth";
+import app from "../firbase/firebaseAuth";
 import { getFirestore, setDoc, doc } from "firebase/firestore";
-import { datePlus } from "../../firbase/constant";
+import { datePlus } from "../firbase/constant";
 
-import { Footer, MainNavBar } from "../../components/navbars";
+import { Footer, MainNavBar } from "../components/navbars";
 import { useRouter } from "next/router";
 import Swal from "sweetalert2";
 

@@ -172,7 +172,7 @@ a {
 }
 
 /* recipt */
-
+/* 
 
 .recipt{
   -webkit-text-size-adjust: 100%;
@@ -238,10 +238,10 @@ td {
 
 .recipt div[style*="margin: 16px 0;"] {
   margin: 0 !important;
-}
-.bg-smoke{
+} */
+.recipt .bg-smoke{
   background-color: whitesmoke;
 }
-.shadow{
+.recipt .shadow{
   box-shadow: 0px 0px 10px 0px black !important;
 }

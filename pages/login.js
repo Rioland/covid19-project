@@ -18,7 +18,7 @@ const auth = getAuth(app);
 auth;
 const Login = () => {
   var route = useRouter();
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [lemail, setLEmail] = useState("");
   const [lpassword, setLPassword] = useState("");
 
@@ -28,7 +28,7 @@ const Login = () => {
         setLoading(true);
         signInWithEmailAndPassword(auth, lemail, lpassword)
           .then((userCredential) => {
-            route.push("./admin/");
+            route.push("./admin");
             setLoading(false);
           })
           .catch((error) => {
@@ -71,7 +71,7 @@ const Login = () => {
                 <div className="form">
                   <h2>Registration</h2>
 
-                  <div className="inputbox mt-3">
+                  <div className="inputbox mt-3 mb-3">
                     {" "}
                     <span>Email</span>{" "}
                     <input
@@ -84,7 +84,7 @@ const Login = () => {
                       className="form-control"
                     />{" "}
                   </div>
-                  <div className="inputbox mt-3">
+                  <div className="inputbox mt-3 mb-3">
                     {" "}
                     <span>Password</span>{" "}
                     <input
@@ -111,11 +111,11 @@ const Login = () => {
                         {loading == true ? "proccessing..." : "Login"}
                       </button>{" "}
                     </div>{" "}
-                    <Link href={"/register"}>
+                    {/* <Link href={"/register"}>
                       <a href="#" className="login">
                         Register
                       </a>
-                    </Link>
+                    </Link> */}
                   </div>
                   <div className="form-check mt-2">
                     {" "}
@@ -131,10 +131,8 @@ const Login = () => {
                       htmlFor="flexCheckChecked"
                     >
                       {" "}
-                      I agree to the terms and conditions of{" "}
-                      <a href="" className="login">
-                        Privacy &amp; Policy
-                      </a>{" "}
+                      I agree to the terms and conditions
+                     
                     </label>{" "}
                   </div>
                 </div>
@@ -144,8 +142,8 @@ const Login = () => {
                   {" "}
                   <img
                     src="images/xprotect.png.pagespeed.ic.isMGsjEM4C.png"
-                    width={400}
-                    height={500}
+                    width={300}
+                    height={300}
                   />{" "}
                 </div>
               </div>
