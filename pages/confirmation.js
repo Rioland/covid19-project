@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import app from "../firbase/firebaseAuth";
 import { getDoc, getFirestore,doc } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { async } from "@firebase/util";
+
 
 const db = getFirestore(app);
 
@@ -20,7 +20,7 @@ const Conf = () => {
     try{
      const snap=await getDoc(docRef);
      if(snap.exists){
-      console.log(snap.data());
+      // console.log(snap.data());
       setUserData(snap.data())
      }
                
@@ -67,22 +67,22 @@ const Conf = () => {
               <div className="row">
                 <p className="col-6">Vacine ID</p>
                 
-                <p className="col-6"> {userData.Vacine_Id} </p>
+                <p className="col-6"> {userData.Vacine_Id??""} </p>
               </div>
               <div className="row">
                 <p className="col-6">Facility ID</p>
                 
-                <p className="col-6"> {userData.facilityId} </p>
+                <p className="col-6"> {userData.facilityId??""} </p>
               </div>
               <div className="row">
                 <p className="col-6">Facility type</p>
                 
-                <p className="col-6"> {userData.facilityType} </p>
+                <p className="col-6"> {userData.facilityType??""} </p>
               </div>
               <div className="row">
                 <p className="col-6">First Dosage Date</p>
                 
-                <p className="col-6"> {userData.first_date} </p>
+                <p className="col-6"> {userData.first_date??""} </p>
               </div>
               
             </div>

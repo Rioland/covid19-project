@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
-import { app } from "../firbase/firebaseAuth";
+import app  from "../firbase/firebaseAuth";
 import Loading from "../components/loading";
 import { validateEmail } from "../firbase/constant";
 import Swal from "sweetalert2";
@@ -10,7 +10,7 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 
-import Link from "next/link";
+// import Link from "next/link";
 import { Fragment, useState } from "react";
 import { Footer, MainNavBar } from "../components/navbars";
 import { useRouter } from "next/router";
@@ -37,7 +37,7 @@ const Login = () => {
             setLoading(false);
             Swal.fire({
               title: "Error!",
-              text: "Error code",
+              text: errorMessage,
               icon: "error",
               confirmButtonText: "ok",
             });
