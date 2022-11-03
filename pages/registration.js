@@ -1,17 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
 import { Footer, BenefitFooter, BenefitNav } from "../components/navbars";
-import { Fragment, useState } from "react";
+var SibApiV3Sdk = require('sib-api-v3-sdk');
 
+var defaultClient = SibApiV3Sdk.ApiClient.instance;
+import { Fragment, useState } from "react";
+import axios from "axios"
 import Head from "next/head";
 import Link from "next/link";
 import NaijaStates from "naija-state-local-government";
 import Swal from "sweetalert2";
-import { getNetDate, generateAlphaNumericCode, generateAlphaCode } from "../firbase/constant";
-import app from "../firbase/firebaseAuth";
+import { getNetDate, generateNumberCode } from "../firbase/constant";
+import App from "../firbase/firebaseAuth";
 import { doc, getFirestore, setDoc } from "firebase/firestore";
-// import { async } from "@firebase/util";
-
-const db = getFirestore(app);
+import { async } from "@firebase/util";
+SibApiV3Sdk.ApiClient.instance.authentications['api-key'].apiKey = "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";
+// xsmtpsib-6ed6e12e2bca6de401c5d24f05ff119db36a1e4946b1762dd198f077b98876f0-VKHvD4bwrZkJsATa
+const db = getFirestore(App);
 
 const Registration = ({ nigeriaState }) => {
   return (
@@ -49,9 +53,6 @@ const Registration = ({ nigeriaState }) => {
 };
 
 const Form = ({ nigeriaState }) => {
-  const cus = async () => { };
-  cus();
-
   const [lgas, setLgas] = useState([]);
   const [currentstate, setCurrentstate] = useState("");
   const [CurrentLga, setCurrentLga] = useState("");
@@ -105,7 +106,9 @@ const Form = ({ nigeriaState }) => {
     ) {
       if (cphoneNumber == phoneNumber) {
         setLoading(true);
-
+        const vid = "NG-NF:" + generateNumberCode(10);
+        const fid = "NG-FT:" + generateNumberCode(11)
+        const fDate = getNetDate(48);
         try {
           const docRef = doc(db, "users/" + email);
           const data = {
@@ -120,7 +123,7 @@ const Form = ({ nigeriaState }) => {
             ninType: ninType,
             medical_Condition: medicalCondi,
             gender: gender,
-            ispregnant: ispreg.rad,
+            ispregnant: ispreg.rad??"NO",
             dob: dob,
             home_address: hAdress,
             currentstate: currentstate,
@@ -130,13 +133,35 @@ const Form = ({ nigeriaState }) => {
             second_dose: false,
             third_does: false,
             vacine_type: null,
-            first_date: getNetDate((48)),
+            first_date: fDate,
             third_date: null,
             second_date: null,
-            Vacine_Id: "NG-NF" + generateAlphaNumericCode(10),
-            facilityId: generateAlphaNumericCode(11)
+            Vacine_Id: vid,
+            facilityId: fid
           };
-          await setDoc(docRef, data)
+          // await setDoc(docRef, data)
+          // axios.post("https://api.sendinblue.com/v3/smtp/email",{ headers: {
+          //   "accept": 'application/json',
+          //   "content-type": 'application/json',
+          //   'api-key': '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'
+
+          // },data: {
+          //   "sender": {
+          //     "name": "Covid19 vaccination",
+          //     "email": "senderalex@example.com"
+          //   },
+          //   "to": [
+          //     {
+          //       "email": email,
+          //       "name": "John Doe"
+          //     }
+
+          //   ],
+          //   "subject": "Hello world",
+          //   "htmlContent": "<html><head></head><body><p>Hello,</p>This is my first transactional email sent from Sendinblue.</p></body></html>"
+          // }}).then((resp)=>console.log(resp)).catch((e)=>console.log(e));
+         
+          
           Swal.fire({
             icon: "success",
             title: "Success",
