@@ -119,7 +119,9 @@ const Amin = ({ users }) => {
                         <button className="btn btn-outline-info me-1" onClick={() => {
                           route.push(`./admin/userprofile?vid=${data['Vacine_Id']}`)
                         }} >edit</button>
-                        <button className="btn btn-outline-danger"  >del</button>
+                        <button className="btn btn-outline-danger" onClick={()=>{
+                          
+                        }} >del</button>
                       </td>
                     </tr>
                   })}
