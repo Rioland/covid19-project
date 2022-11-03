@@ -88,7 +88,7 @@ const Amin = ({ users }) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {users.map((data) => {
+                  {alluser.map((data) => {
                     return <tr key={data['Vacine_Id']}>
                       <td>
                         <span className="bg-blight">{data['last_name']} {data['first_name']}</span>
